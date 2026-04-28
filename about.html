@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arshad Advokater AS | Om oss</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/about.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="logo" href="index.html">Arshad Advokater AS</a>
+        <nav aria-label="Hovedmeny">
+          <ul class="menu">
+            <li><a href="index.html">Forside</a></li>
+            <li><a class="active" href="about.html">Om oss</a></li>
+            <li><a href="tjenester.html">Tjenester</a></li>
+            <li><a href="utlandet.html">Saker fra utlandet</a></li>
+            <li><a href="anmeldelser.html">Anmeldelser</a></li>
+          </ul>
+        </nav>
+        <a class="nav-cta" href="kontakt.html">Kontakt oss</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <p class="eyebrow">OM OSS</p>
+          <h1>Et nyetablert advokatfirma med høy faglig standard.</h1>
+          <p>
+            Arshad Advokater AS er et nyetablert advokatfirma med mål om å tilby
+            tydelig, tilgjengelig og profesjonell juridisk bistand. Selv om firmaet
+            er nytt, er teamet vårt bygget på solid juridisk erfaring og sterk
+            forståelse for klientens behov i krevende situasjoner.
+          </p>
+          <p>
+            Vi jobber strukturert med hver sak og legger vekt på ærlig rådgivning,
+            rask oppfølging og løsninger som faktisk fungerer i praksis.
+          </p>
+          <a class="btn" href="advokater.html">Les mer</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container foot-wrap">
+        <p>© <span id="year"></span> Arshad Advokater AS</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

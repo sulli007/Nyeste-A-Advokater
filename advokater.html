@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arshad Advokater AS | Våre advokater</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/advokater.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="logo" href="index.html">Arshad Advokater AS</a>
+        <nav aria-label="Hovedmeny">
+          <ul class="menu">
+            <li><a href="index.html">Forside</a></li>
+          <li><a href="about.html">Om oss</a></li>
+            <li><a href="tjenester.html">Tjenester</a></li>
+            <li><a href="utlandet.html">Saker fra utlandet</a></li>
+            <li><a href="anmeldelser.html">Anmeldelser</a></li>
+          </ul>
+        </nav>
+        <a class="nav-cta" href="kontakt.html">Kontakt oss</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <p class="eyebrow">VÅRT TEAM</p>
+          <h1>Møt advokatene i Arshad Advokater AS.</h1>
+          <p>
+            Teamet vårt består av advokater med ulik fagbakgrunn og internasjonal erfaring,
+            slik at vi kan gi klientene både bredde og dybde i juridiske vurderinger.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container team-grid">
+          <article class="lawyer-card">
+            <img
+              src="images/Sobhat.png"
+              alt="Portrett av advokat Sohbat Arshad"
+            />
+            <div class="content">
+              <h2>Sohbat Arshad</h2>
+              <p>
+                Sohbat Arshad er grunnlegger av firmaet og arbeider særlig med strafferett
+                og sivilrett. Han er kjent for strukturert sakstilnærming, tydelig prosessledelse
+                og evne til å forklare komplekse juridiske spørsmål på en forståelig måte.
+              </p>
+              <p>
+                Han har juridisk utdanning fra Universitetet i Oslo og videre faglig fordypning
+                innen prosedyre og tvisteløsning. I møte med klientene legger han stor vekt på
+                tillit, tilgjengelighet og realistiske strategier.
+              </p>
+            </div>
+          </article>
+
+          <article class="lawyer-card">
+            <img
+              src="images/Bilal.png"
+              alt="Portrett av advokat Bilal Ahmed Khan"
+            />
+            <div class="content">
+              <h2>Bilal Ahmed Khan</h2>
+              <p>
+                Bilal Ahmed Khan arbeider hovedsakelig med arbeidsrett og internasjonale
+                problemstillinger. Han har erfaring med saker der klienter står i komplekse
+                situasjoner med elementer på tvers av flere jurisdiksjoner.
+              </p>
+              <p>
+                Han har studert juss ved University of London og har senere gjennomført
+                videreutdanning i arbeidsrettslig konfliktløsning. Bilal er kjent for
+                rolig rådgivning, grundige analyser og løsningsorientert oppfølging.
+              </p>
+            </div>
+          </article>
+
+          <article class="lawyer-card">
+            <img
+              src="images/Ingrid.png"
+              alt="Portrett av advokat Ingrid Solberg"
+            />
+            <div class="content">
+              <h2>Ingrid Solberg</h2>
+              <p>
+                Ingrid Solberg har særlig kompetanse innen familierett og sivilrett, og
+                bistår klienter i saker som krever både juridisk presisjon og høy grad av
+                menneskelig forståelse.
+              </p>
+              <p>
+                Hun er utdannet jurist fra Universitetet i Bergen og har tilleggsutdanning
+                i mekling. Ingrid er opptatt av tydelig kommunikasjon, trygg prosess og
+                å finne praktiske løsninger som klienten kan leve godt med over tid.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container foot-wrap">
+        <p>© <span id="year"></span> Arshad Advokater AS</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

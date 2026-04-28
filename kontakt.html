@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arshad Advokater AS | Kontakt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/kontakt.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="logo" href="index.html">Arshad Advokater AS</a>
+        <nav aria-label="Hovedmeny">
+          <ul class="menu">
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="about.html">Om oss</a></li>
+            <li><a href="tjenester.html">Tjenester</a></li>
+            <li><a href="utlandet.html">Saker fra utlandet</a></li>
+            <li><a href="anmeldelser.html">Anmeldelser</a></li>
+          </ul>
+        </nav>
+        <a class="nav-cta" href="kontakt.html">Kontakt oss</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <p class="eyebrow">KONTAKT OSS</p>
+          <h1>Send oss en melding – vi svarer raskt.</h1>
+          <p>
+            Fyll ut skjemaet under, så kontakter vi deg med en første vurdering
+            av saken og forslag til neste steg.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container contact-grid">
+          <article class="info-card">
+            <h2>Kontaktinformasjon</h2>
+            <p><strong>Telefon:</strong> +47 22 00 00 00</p>
+            <p><strong>E-post:</strong> post@arshadadvokater.no</p>
+            <p><strong>Adresse:</strong> Karl Johans gate 15, 0154 Oslo</p>
+            <p><strong>Åpningstider:</strong> Mandag–Fredag 08:00–17:00</p>
+            <p>
+              Ved akutte problemstillinger utenfor åpningstid ber vi deg skrive
+              "HASTER" i emnefeltet når du sender e-post.
+            </p>
+          </article>
+
+          <form class="contact-form" id="contact-form" novalidate>
+            <h2>Send forespørsel</h2>
+
+            <label for="name">Navn *</label>
+            <input id="name" name="name" type="text" placeholder="Ditt navn" />
+            <p class="error-message" id="name-error" aria-live="polite"></p>
+
+            <label for="email">E-post *</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="din@epost.no"
+            />
+            <p class="error-message" id="email-error" aria-live="polite"></p>
+
+            <label for="message">Kort om saken *</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Beskriv kort hva saken gjelder"
+            ></textarea>
+            <p class="error-message" id="message-error" aria-live="polite"></p>
+
+            <button type="submit" class="btn">Send forespørsel</button>
+            <p id="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container foot-wrap">
+        <p>© <span id="year"></span> Arshad Advokater AS</p>
+      </div>
+    </footer>
+
+    <script type="module">
+      import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
+      const supabaseUrl = "https://sgazamgtddrxrjklytap.supabase.co";
+      const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNnYXphbWd0ZGRyeHJqa2x5dGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY2NzY0MTAsImV4cCI6MjA5MjI1MjQxMH0.lsgUuJMv1rV8Ni8L7t5idQnwUyvbJI-4VC3mYfJ2xcY";
+      const supabase = createClient(supabaseUrl, supabaseKey);
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const contactForm = document.getElementById("contact-form");
+      const nameInput = document.getElementById("name");
+      const messageInput = document.getElementById("message");
+      const emailInput = document.getElementById("email");
+
+      const nameError = document.getElementById("name-error");
+      const emailError = document.getElementById("email-error");
+      const messageError = document.getElementById("message-error");
+      const formStatus = document.getElementById("form-status");
+
+      const setError = (input, errorElement, message) => {
+        errorElement.textContent = message;
+        input.classList.remove("input-valid");
+        input.classList.add("input-error");
+        input.setAttribute("aria-invalid", "true");
+      };
+
+      const clearError = (input, errorElement) => {
+        errorElement.textContent = "";
+        input.classList.remove("input-error");
+        input.removeAttribute("aria-invalid");
+      };
+
+      contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        formStatus.textContent = "";
+
+        let isValid = true;
+
+        if (nameInput.value.trim().length < 3) {
+          setError(
+            nameInput,
+            nameError,
+            "Vennligst fyll ut minst 3 bokstaver i navn."
+          );
+          isValid = false;
+        } else {
+          clearError(nameInput, nameError);
+          nameInput.classList.add("input-valid");
+        }
+
+        if (!messageInput.value.trim()) {
+          setError(messageInput, messageError, "Vennligst skriv kort om saken.");
+          isValid = false;
+        } else {
+          clearError(messageInput, messageError);
+          messageInput.classList.add("input-valid");
+        }
+
+        const emailValue = emailInput.value.trim();
+
+        if (!emailValue) {
+          setError(emailInput, emailError, "Vennligst fyll ut e-post.");
+          isValid = false;
+        } else if (!emailValue.includes("@") || !emailValue.includes(".")) {
+          setError(emailInput, emailError, "E-post må inneholde @ og .");
+          isValid = false;
+        } else {
+          clearError(emailInput, emailError);
+          emailInput.classList.add("input-valid");
+        }
+
+        if (!isValid) {
+          return;
+        }
+
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = "Sender...";
+
+        try {
+          const { error } = await supabase.from("contact_requests").insert([
+            {
+              name: nameInput.value.trim(),
+              email: emailInput.value.trim(),
+              message: messageInput.value.trim(),
+            },
+          ]);
+
+          if (error) {
+            console.error("Supabase-feil:", error);
+            formStatus.textContent = "Noe gikk galt. Prøv igjen senere." + error.message;
+            return;
+          }
+
+          formStatus.textContent = "Forespørselen ble sendt!";
+          contactForm.reset();
+
+          nameInput.classList.remove("input-valid");
+          emailInput.classList.remove("input-valid");
+          messageInput.classList.remove("input-valid");
+
+          clearError(nameInput, nameError);
+          clearError(emailInput, emailError);
+          clearError(messageInput, messageError);
+        } catch (err) {
+          console.error("Uventet feil:", err);
+          formStatus.textContent = "Noe gikk galt. Prøv igjen senere.";
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = "Send forespørsel";
+        }
+      });
+
+      nameInput.addEventListener("input", () => {
+        if (nameInput.value.trim().length >= 3) {
+          clearError(nameInput, nameError);
+          nameInput.classList.add("input-valid");
+        } else {
+          nameInput.classList.remove("input-valid");
+        }
+      });
+
+      emailInput.addEventListener("input", () => {
+        const value = emailInput.value.trim();
+
+        if (value.includes("@") && value.includes(".")) {
+          clearError(emailInput, emailError);
+          emailInput.classList.add("input-valid");
+        } else {
+          emailInput.classList.remove("input-valid");
+        }
+      });
+
+      messageInput.addEventListener("input", () => {
+        if (messageInput.value.trim()) {
+          clearError(messageInput, messageError);
+          messageInput.classList.add("input-valid");
+        } else {
+          messageInput.classList.remove("input-valid");
+        }
+      });
+    </script>
+  </body>
+</html>

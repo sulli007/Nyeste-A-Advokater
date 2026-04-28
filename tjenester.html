@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arshad Advokater AS | Tjenester</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/tjenester.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="logo" href="index.html">Arshad Advokater AS</a>
+        <nav aria-label="Hovedmeny">
+          <ul class="menu">
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="about.html">Om oss</a></li>
+            <li><a class="active" href="tjenester.html">Tjenester</a></li>
+            <li><a href="utlandet.html">Saker fra utlandet</a></li>
+            <li><a href="anmeldelser.html">Anmeldelser</a></li>
+          </ul>
+        </nav>
+        <a class="nav-cta" href="kontakt.html">Kontakt oss</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">TJENESTEOMRÅDER</p>
+          <h1>Strafferett, arbeidsrett, sivilrett og familierett.</h1>
+          <p>
+            Våre tjenester er bygget rundt de sakstypene klientene våre oftest trenger
+            hjelp til. Vi legger vekt på juridisk kvalitet, rask kommunikasjon og tydelige
+            råd som gjør det lettere å ta riktige beslutninger.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container service-grid">
+          <article class="service-card">
+            <h2>Strafferett</h2>
+            <p>
+              Vi bistår klienter i alle faser av straffesaker, fra første kontakt med politi
+              til behandling i domstolene. Du får tydelig informasjon om rettigheter, prosess
+              og strategi, slik at du kan møte saken med trygghet og kontroll.
+            </p>
+            <ul>
+              <li>Bistand ved avhør og etterforskning</li>
+              <li>Vurdering av bevis og juridiske argumenter</li>
+              <li>Prosedyre i retten ved behov</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h2>Arbeidsrett</h2>
+            <p>
+              Arbeidsrettslige konflikter krever både juridisk og praktisk forståelse. Vi hjelper
+              i saker om oppsigelse, omplassering, arbeidsmiljøkonflikter og avtalebrudd. Vi jobber
+              for løsninger som både er juridisk holdbare og gjennomførbare i praksis.
+            </p>
+            <ul>
+              <li>Oppsigelser, endringsoppsigelser og omstilling</li>
+              <li>Tvister om arbeidsavtaler og rettigheter</li>
+              <li>Strategisk rådgivning for arbeidsgiver/arbeidstaker</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h2>Sivilrett</h2>
+            <p>
+              I sivile tvister bistår vi med analyse av krav, dokumentasjon og prosessvalg.
+              Vi forsøker alltid å finne effektive løsninger tidlig, men vi er også klare for
+              rettslig behandling der det er nødvendig for å sikre klientens interesser.
+            </p>
+            <ul>
+              <li>Kontraktskonflikter og økonomiske krav</li>
+              <li>Erstatningssaker og tvisteløsning</li>
+              <li>Forhandling, mekling og rettslig oppfølging</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h2>Familierett</h2>
+            <p>
+              Familierettslige saker handler ofte om både juss og mennesker. Vi bistår i saker
+              om samlivsbrudd, barnefordeling, samvær og økonomisk oppgjør. Vår målsetting er å
+              sikre en ryddig prosess med tydelige råd og gode, langsiktige løsninger.
+            </p>
+            <ul>
+              <li>Foreldreansvar, bosted og samvær</li>
+              <li>Økonomisk oppgjør ved samlivsbrudd</li>
+              <li>Juridisk rådgivning ved familiekonflikter</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section panel-section">
+        <div class="container panel">
+          <h2>Har du en konkret sak?</h2>
+          <p>
+            Kontakt oss for en første vurdering. Du får rask respons, en tydelig plan og
+            rådgivning som er tilpasset akkurat din situasjon.
+          </p>
+          <a class="btn" href="kontakt.html">Gå til kontakt</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container foot-wrap">
+        <p>© <span id="year"></span> Arshad Advokater AS</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
