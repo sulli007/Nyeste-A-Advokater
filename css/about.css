@@ -1,0 +1,141 @@
+:root {
+  --bg: #1a273a; /* 🔥 mørk blå bakgrunn */
+  --ink: #ffffff;
+  --brand: #24334a;
+}
+
+/* RESET */
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", Arial, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(135deg, #24334a, #1a273a);
+  line-height: 1.65;
+  font-size: 21px;
+
+  /* 🔥 Footer fix */
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.container {
+  width: min(1140px, 92%);
+  margin: 0 auto;
+}
+
+/* HEADER */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 24, 37, 0.88);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
+}
+
+.nav-wrap {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.menu a:hover,
+.menu a.active {
+  background: rgba(255,255,255,0.16);
+}
+
+/* BUTTONS */
+.nav-cta,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  border: 1px solid rgba(255,255,255,0.3);
+  font-weight: 700;
+  background: transparent;
+  color: #fff;
+}
+
+.nav-cta:hover,
+.btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.1);
+}
+
+/* MAIN */
+main {
+  flex: 1;
+}
+
+/* HERO */
+.hero {
+  color: #fff;
+  padding: 5.4rem 0;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #d9bc90;
+  letter-spacing: 0.14em;
+  font-size: 1.78rem;
+  font-weight: 700;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4.4vw, 3.3rem);
+  margin: 0.8rem 0;
+}
+
+/* FOOTER */
+.site-footer {
+  background: #101824;
+  color: #e8e8e8;
+}
+
+.foot-wrap {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 980px) {
+  .menu {
+    display: none;
+  }
+}
